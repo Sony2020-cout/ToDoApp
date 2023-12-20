@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ToDo
+spec:
+  selector:
+    matchLabels:
+      app: ToDo
+  template:
+    metadata:
+      labels:
+        app: ToDo
+    spec:
+      containers:
+      - name: ToDo
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
